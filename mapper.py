@@ -1,14 +1,15 @@
 import sys
-
+sum_numbers=0
+count=0
 for line in sys.stdin:
    
     line = line.strip()
 
-    values = [int(val) for val in line.split()]
-  
-    total = sum(values)
+    numbers=line.split()
 
-    count = len(values)
+    for num in numbers:
+        sum_numbers = int(num)+num
+        count = count+1
 
-    print(f'{count}\t{total}')
+    print(f'{count}\t{sum_numbers}')
 
