@@ -1,15 +1,16 @@
+#!/usr/bin/env python
+"""mapper.py"""
+
 import sys
-sum_numbers=0
-count=0
+
+# input comes from STDIN (standard input)
 for line in sys.stdin:
-   
+    # remove leading and trailing whitespace
     line = line.strip()
-
-    numbers=line.split()
-
-    for num in numbers:
-        sum_numbers = int(num)+num
-        count = count+1
-
-    print '%s\t%s' % (count,sum_numbers)
+    # split the line into words
+    words = line.split()
+    # increase counters
+    for word in words:
+    
+        print '%s\t%s' % (word, 1)
 
