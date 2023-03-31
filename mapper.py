@@ -11,5 +11,5 @@ for line in sys.stdin:
         sum_numbers = int(num)+num
         count = count+1
 
-    print(f'{count}\t{sum_numbers}')
+    print '%s\t%s' % (count,sum_numbers)
 

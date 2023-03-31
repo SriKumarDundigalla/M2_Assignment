@@ -14,6 +14,6 @@ for line in sys.stdin:
     count += val_count
 if count > 0:
     avg = total / count
-    print(f'Average: {avg}')
+    print '%s' % (avg)
 else:
     print('No data')
