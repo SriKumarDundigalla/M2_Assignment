@@ -27,7 +27,7 @@ for line in sys.stdin:
     count += val_count
 if count > 0:
     avg = total / count
-    print 'Average: %s' % (total_sum/count)
+    print 'Average: %s' % (total/count)
 
 
 
