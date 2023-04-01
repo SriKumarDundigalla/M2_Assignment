@@ -1,19 +1,20 @@
 #!/usr/bin/env python
 """mapper.py"""
 
+# Import the sys module to read input from standard input
 import sys
 
-# input comes from STDIN (standard input)
+# Loop through each line of input from standard input
 for line in sys.stdin:
-    # remove leading and trailing whitespace
+
+    # Strip any whitespace or newline characters from the line
     line = line.strip()
-    # split the line into words
-    words = line.split()
-    # increase counters
-    for word in words:
-        # write the results to STDOUT (standard output);
-        # what we output here will be the input for the
-        # Reduce step, i.e. the input for reducer.py
-        #
-        # tab-delimited; the trivial word count is 1
-        print '%s\t%s' % (word, 1)
+
+    # Split the line into a list of numbers based on whitespace as the delimiter
+    numbers = line.split()
+
+    # Loop through each number in the list and output a key-value pair
+    # consisting of the number and a count of 1
+    for num in numbers:
+        print '%s\t%s' % (num, 1)
+

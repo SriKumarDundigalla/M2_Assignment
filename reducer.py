@@ -1,30 +1,34 @@
 #!/usr/bin/env python
 """reducer.py"""
 
-from operator import itemgetter
+# Import the sys module to read input from standard input
 import sys
 
-total=0
-count_tot=0
+# Initialize the variables to hold the total and count
+total = 0
+count_tot = 0
 
-# input comes from STDIN
+# Loop through each line of input from standard input
 for line in sys.stdin:
-    # remove leading and trailing whitespace
+
+    # Strip any whitespace or newline characters from the line
     line = line.strip()
 
-    # parse the input we got from mapper.py
-    num,count = line.split('\t', 1)
+    # Split the line into the key and value based on the tab separator
+    num, count = line.split('\t', 1)
 
-    # convert count (currently a string) to int
+    # Try to convert the key and value to integers
     try:
-	    num=int(num)
+        num = int(num)
         count = int(count)
+    # If either value cannot be converted to an integer, skip to the next line
     except ValueError:
-        # count was not a number, so silently
-        # ignore/discard this line
         continue
 
-    total=num+total
-    count_tot=count+count_tot
-if count >0:
-   print 'avg:%s'%(total/float(count_tot))
+    # Increment the total by the current key value and the count by the current value
+    total = num + total
+    count_tot = count + count_tot
+
+# If the count is greater than 0, print the average
+if count > 0:
+    print 'avg:%s' % (total / float(count_tot))
